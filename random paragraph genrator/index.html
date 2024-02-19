@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="flex flex-col justify-center items-center">
+    <h1 class="text-3xl">RANDOM PARA GENRATOR</h1>
+    <div class="cointner   max-h-screen w-96 bg-slate-800 pl-10 pt-3 ">
+        <input type="number" class="bg-red-700  w-60 h-8 p-3 " id="inputfield">
+        <button onclick="fun()"  class="bg-gray-100 px-1 rounded-md">GENRATE</button>
+        <p id="para" class="h-1 w-80 max-h-screen bg-blue-950 text-slate-950 text-sm"></p>
+        
+</div>
+ 
+</body>
+<script>
+    
+let inputField=document.getElementById("inputfield")
+let para=document.getElementById("para")
+
+
+let fun=()=>{
+    let arr=["If you're looking for random paragraphs, you've come to the right place. When a random word or a random sentence isn't quite enough, the next logical step is to find a random paragraph. We created the Random Paragraph Generator with you in mind. The process is quite simple. Choose the number of random paragraphs you'd like to see and click the button. Your chosen number of paragraphs will instantly appear.","While it may not be obvious to everyone, there are a number of reasons creating random paragraphs can be useful. A few examples of how some people use this generator are listed in the following paragraphs.","Generating random paragraphs can be an excellent way for writers to get their creative flow going at the beginning of the day","Another productive way to use this tool to begin a daily writing routine. One way is to generate a random paragraph with the intention to try to rewrite it while"]
+    para.innerHTML=""
+let random=Math.floor((Math.random()*arr.length))
+    if(inputField.value>=arr.length || inputField.value==0){
+        para.innerHTML=arr[random]
+    }
+    else{
+        for (let i = 0; i < inputField.value; i++) {
+                     
+                    para.innerHTML +=  arr[i] 
+                }
+    }
+   
+   
+
+}
+</script>
+</html>

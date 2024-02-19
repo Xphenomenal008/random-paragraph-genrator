@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cointaner flex justify-center ml-40 items-center mt-32 h-14 w-32 font-extrabold text-yellow-700 bg-black">
+        <button id="btn">show toast notification</button>
+    </div>
+    <div class="notinfivations flex flex-col  items-center  bg-black h-96 mt-4 w-96 ml-44">
+        <span class="text-gray-100 bg-red-700 ">notification</span>
+    </div>
+     
+</body>
+<script>
+    let time=1000
+    let index=0
+    let notifications=["notif1","notif2","notif3","ntif4"]
+    let btn=document.getElementById("btn")
+    let notinfivations=document.querySelector(".notinfivations")
+    let fungo=()=>{
+        btn.addEventListener("click",()=>{
+        
+        let notify=document.createElement("span")
+        notify.innerHTML=notifications[index]
+        notify.classList.add("bg-red-700","text-gray-100")
+        notinfivations.appendChild(notify)
+        setTimeout(() => {
+            notinfivations.removeChild(notify)  
+        },  time);
+ increment()
+       
+      
+    })
+    }
+   
+    function increment(){
+       time +=1000
+        index ++
+        if(index>=notifications.length){
+            index=0
+        }
+        
+         
+    }
+    fungo()
+      
+</script>
+</html>
